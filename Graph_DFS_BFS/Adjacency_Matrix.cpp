@@ -4,6 +4,26 @@ int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    cout << "Hello, I am pushpal";
+    int n, e;
+    cin >> n >> e;
+    int mat[n][n];
+    memset(mat, 0, sizeof(mat));
+    while (e--)
+    {
+        int a, b;
+        cin >> a >> b;
+        mat[a][b] = 1;
+        mat[b][a] = 1;
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << mat[i][j] << " ";
+        }
+        cout << "\n";
+    }
+
     return 0;
 }
